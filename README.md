@@ -14,7 +14,7 @@ Rest Web servis mimarisi literatürüne uygun yazılan web servis mimarilerine R
 
 Sadece XML veri tiplerini destekleyen yapıya SAOP web servis mimarileri denir.
 
-### RESTFUL WEB SERVİS MİMARİSİ
+#### RESTFUL WEB SERVİS MİMARİSİ
 
 ##### ✔️ A.) Get Metodu:
 Get metodu kullanıldığında istekler URL kısmından gönderilir.Gönderilen bilgiler URL' de görüntüleneceği için güvenlik riski yüksek bir metottur.
