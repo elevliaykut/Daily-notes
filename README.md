@@ -1,4 +1,4 @@
-# Daily-notes
+# 💫 Daily-notes
 ## WEB SERVİS MİMARİLERİ
 Veri akışının platform bağımsız gerçekleşebilmesi için bir web servis mimarisine ihtiyaç duyulmaktadır. Bu veri akışının HTTP üzerinden sağlanması Remote Procedure Call olarak isimlendirilir.
 
