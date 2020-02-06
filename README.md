@@ -16,20 +16,20 @@ Sadece XML veri tiplerini destekleyen yapıya SAOP web servis mimarileri denir.
 
 ### RESTFUL WEB SERVİS MİMARİSİ
 
-##### A.) Get Metodu:
+##### ✔️ A.) Get Metodu:
 Get metodu kullanıldığında istekler URL kısmından gönderilir.Gönderilen bilgiler URL' de görüntüleneceği için güvenlik riski yüksek bir metottur.
 
-##### B.) Post Metodu:
+##### ✔️ B.) Post Metodu:
 POST metodunda da istekler URL kısmından gönderilir.Ancak GET metoduna göre hızlı ve daha güvenilirdir.
 
-##### C.) Put Metodu:
+##### ✔️ C.) Put Metodu:
 PUT metodunu bir formdaki verinin tamamını göndermek gerektiği durumda kullanırız.
 
-##### D.) Patch Metodu:
+##### ✔️ D.) Patch Metodu:
 Patch metodunu ise bir formda client sadece email' ini güncellemek isterse bu durumda patch kullanılmalıdır.
 Patch gereken ksımda PUT metodu kullanılmalıdır ki RESTful mimarisine bağlı kalmış olalım.
 
-##### E.) Delete Metodu:
+##### ✔️ E.) Delete Metodu:
 DELETE metodu URL de belirlediğimiz resource'un tamamı ile silinmesi için kullanılan bir metotur.
 
 
