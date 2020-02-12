@@ -1,10 +1,10 @@
 # 💫 Daily-notes
 Gün içinde Development yaparken öğrendiğim her şeyi buraya yazmaya karar verdim. Bu şey de olabilir; karşılaştığım hataların çözüm yollarıda olabilir. Ona şimdi emin olamadım.😀
-## O zaman başlayalım 🚀
+#### O zaman başlayalım 🚀
 
 <hr></hr>
 
-## WEB SERVİS MİMARİLERİ
+### WEB SERVİS MİMARİLERİ
 Veri akışının platform bağımsız gerçekleşebilmesi için bir web servis mimarisine ihtiyaç duyulmaktadır. Bu veri akışının HTTP üzerinden sağlanması Remote Procedure Call olarak isimlendirilir.
 
 2 çeşit web servis mimarisi mevcuttur.
@@ -39,7 +39,8 @@ DELETE metodu URL de belirlediğimiz resource'un tamamı ile silinmesi için kul
 
 <hr></hr>
 
-## Authentication ve Authorization (Kimlik doğrulama ve Yetkilendirme)
+### Authentication ve Authorization (Kimlik doğrulama ve Yetkilendirme)
+
 Authentication,bir kullanıcının herhangi bir kaynağa erişimde kimliğinin doğrulanması işlemidir.
 
 Kullanıcıya Kimsin sorusu sorulur? Bu sorunun cevabı genellikle kullanıcının kullanıcı  adı ve  şifre şeklinde cevap vermesiyle yanıtlanır.
