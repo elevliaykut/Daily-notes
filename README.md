@@ -1,7 +1,10 @@
 # 💫 Daily-notes
 Gün içinde Development yaparken öğrendiğim her şeyi buraya yazmaya karar verdim. Bu şey de olabilir; karşılaştığım hataların çözüm yollarıda olabilir. Ona şimdi emin olamadım.😀
 ## O zaman başlayalım 🚀
-# WEB SERVİS MİMARİLERİ
+
+<hr></hr>
+
+## WEB SERVİS MİMARİLERİ
 Veri akışının platform bağımsız gerçekleşebilmesi için bir web servis mimarisine ihtiyaç duyulmaktadır. Bu veri akışının HTTP üzerinden sağlanması Remote Procedure Call olarak isimlendirilir.
 
 2 çeşit web servis mimarisi mevcuttur.
@@ -34,10 +37,14 @@ Patch gereken ksımda PUT metodu kullanılmalıdır ki RESTful mimarisine bağl�
 ##### ✔️ E.) Delete Metodu:
 DELETE metodu URL de belirlediğimiz resource'un tamamı ile silinmesi için kullanılan bir metottur.
 
-# Authentication ve Authorization (Kimlik doğrulama ve Yetkilendirme)
+<hr></hr>
+
+## Authentication ve Authorization (Kimlik doğrulama ve Yetkilendirme)
 Authentication,bir kullanıcının herhangi bir kaynağa erişimde kimliğinin doğrulanması işlemidir.
 
 Kullanıcıya Kimsin sorusu sorulur? Bu sorunun cevabı genellikle kullanıcının kullanıcı  adı ve  şifre şeklinde cevap vermesiyle yanıtlanır.
+
+        - Authentication = login + password (who you are)
 
 Güvenliğin daha yüksek tutulması gereken durumlarda kullanıcı adı ve şifre ile beraber dijital sertifikalar kullanılarak güvenliğin arttırılması sağlanabilir.
 
@@ -49,13 +56,16 @@ Dosya-klasör erişimleri,erişim saatleri,ayrılmış alan miktarı v.b.
 
 Authorization işleminin iki aşaması mevcuttur.
 
-1)Sistem yöneticisi erişilecek kaynak üzerinde izinleri tanımlar
+- 1) Sistem yöneticisi erişilecek kaynak üzerinde izinleri tanımlar
 
-2)Erişilecek kaynağın üzerinde bulunduğu sistem veya uygulama kaynağa erişileceği zaman izinleri doğrular
+- 2) Erişilecek kaynağın üzerinde bulunduğu sistem veya uygulama kaynağa erişileceği zaman izinleri doğrular.
+
+          - Authorization = permissions (what you are allowed to do)
 
 Peki authentication işlemi yapılmadan authorization işlemi yapılamaz mı?
 
 Kimsin sorusunun sorulmaması demek herhangi birisi anlamına gelir. Dolayısı ile kimliği doğrulanmayan yani anonim kullanıcılara izin verileceği durumlarda bu işlem gerçekleştirilir.
 
+<hr></hr>
 
 
