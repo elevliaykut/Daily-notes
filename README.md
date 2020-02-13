@@ -111,15 +111,15 @@ Kullanıcı tarafından gönderilen bir HTTP talebinin gerçek kullanıcı taraf
 
 ### 1.e CSRF Zafiyetine Karşı Alınabilecek Önlemler
 
-        ✔️ Kullanıcının sisteme gönderdiği önemli talepler POST metodu ile alınmalıdır.
-        ✔️Siteler Arası Talep Sahteciliğini (CSRF) önlemek için en popüler yöntem, kullanıcıya rastgele üretilmiş eşsiz bir “token” bilgisi vermektir. CSRF Token veya Synchronizer Token olarak adlandırılan bu yöntem şu şekilde çalışır:
-                - Web sunucusu bir token oluşturur. (Bu token işlem yapıldıkça yeniden üretilir.)
-                - Token, formda gizli bir bilgi olarak depolanır.
-                - Kullanıcı POST işlemini gerçekleştirir.
-                - Token bilgisi POST verilerine dahil edilir.
-                - Web uygulaması, sistem tarafından oluşturulan tokeni, talepte gönderilen token ile karşılaştırır.
-                - Eğer token verileri eşleşirse, isteğin gerçek kullanıcı tarafından gönderildiği anlaşılır ve istek onaylanır.
-                - Eşleşme yoksa, istek reddedilir. Bu sayede kötü niyetli istekler engellenmiş olur.
+✔️ Kullanıcının sisteme gönderdiği önemli talepler POST metodu ile alınmalıdır.
+✔️Siteler Arası Talep Sahteciliğini (CSRF) önlemek için en popüler yöntem, kullanıcıya rastgele üretilmiş eşsiz bir “token” bilgisi vermektir. CSRF Token veya Synchronizer Token olarak adlandırılan bu yöntem şu şekilde çalışır:
+        - Web sunucusu bir token oluşturur. (Bu token işlem yapıldıkça yeniden üretilir.)
+        - Token, formda gizli bir bilgi olarak depolanır.
+        - Kullanıcı POST işlemini gerçekleştirir.
+        - Token bilgisi POST verilerine dahil edilir.
+        - Web uygulaması, sistem tarafından oluşturulan tokeni, talepte gönderilen token ile karşılaştırır.
+        - Eğer token verileri eşleşirse, isteğin gerçek kullanıcı tarafından gönderildiği anlaşılır ve istek onaylanır.
+        - Eşleşme yoksa, istek reddedilir. Bu sayede kötü niyetli istekler engellenmiş olur.
 <hr></hr>
 
 
