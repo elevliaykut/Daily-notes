@@ -126,7 +126,7 @@ Kullanıcı tarafından gönderilen bir HTTP talebinin gerçek kullanıcı taraf
 
 Uygulamamızda kullanacağımız formları csrf alanı olarak belirlemeliyiz.
 
-                - <form method="POST" action="/profile">
+                <form method="POST" action="/profile">
                         @csrf
                         ...
                 </form>
