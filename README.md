@@ -113,7 +113,7 @@ Kullanıcı tarafından gönderilen bir HTTP talebinin gerçek kullanıcı taraf
 
 ✔️ Kullanıcının sisteme gönderdiği önemli talepler POST metodu ile alınmalıdır.
 
-✔️Siteler Arası Talep Sahteciliğini (CSRF) önlemek için en popüler yöntem, kullanıcıya rastgele üretilmiş eşsiz bir “token” bilgisi vermektir. CSRF Token veya Synchronizer Token olarak adlandırılan bu yöntem şu şekilde çalışır:
+✔️ Siteler Arası Talep Sahteciliğini (CSRF) önlemek için en popüler yöntem, kullanıcıya rastgele üretilmiş eşsiz bir “token” bilgisi vermektir. CSRF Token veya Synchronizer Token olarak adlandırılan bu yöntem şu şekilde çalışır:
         - Web sunucusu bir token oluşturur. (Bu token işlem yapıldıkça yeniden üretilir.)
         - Token, formda gizli bir bilgi olarak depolanır.
         - Kullanıcı POST işlemini gerçekleştirir.
