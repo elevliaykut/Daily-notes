@@ -142,6 +142,8 @@ Aşağıda ki store fonksiyonumuzda gelen request deki formda title,body inputun
 
 <img src="./images/validation.png" width="400" height="350"/>
 
+https://laravel.com/docs/5.8/validation
+
 ✔️ Laravel de regex kullanımı
 
                 $this->validate(request(), [
