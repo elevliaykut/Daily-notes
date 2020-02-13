@@ -102,6 +102,24 @@ Bu form, kullanıcının gönder düğmesine basmasını gerektirecektir, ancak 
 Bu senaryonun önüne geçmek için isteklere, kullanılan formlara token bilgisi eklenilmelidir. Aynı senaryoyu token bilgisi ile çalışan bir sistemde tekrarlayalım:
 
         <form action = “<nowiki> http://bankasitesi.com/transfer.do&token=314asdq62643383279!%5028841971 </nowiki>” method = “POST”>
+
+Bir önceki örnekten farklı olarak bu sefer gönderdiğimiz isteğe bir de anlık olarak ürettiğimiz benzersiz token bilgisini ekledik. Saldırgan bu tokeni tahmin edemeyeceği için bu güvenlik açığı üzerinden hedef kişiye saldıramaz.
+
+### 1.d CSRF Zafiyeti Nasıl Tespit Edilir?
+
+Kullanıcı tarafından gönderilen bir HTTP talebinin gerçek kullanıcı tarafından mı yoksa bir saldırgan tarafından mı gönderildiğini tespit etmek zordur. Web sitesine erişmeye çalışan bir kullanıcının kimliğini doğrulamak için sıkı önlemler alınabilir, fakat kullanıcılar aynı oturumda tekrar tekrar kimlik doğrulamak ile uğraşmak istemezler. Sistemde token yönteminin kullanılması, kimliğin arka planda otomatik olarak doğrulanmasını sağlar. Böylece kullanıcı kimlik doğrulama istekleriyle sürekli olarak rahatsız edilmez. Genelde CSRF açığını engellemek için sisteme giriş yapan kullanıcıya, her defasında farklı ve tahmin edilmesi güç “token” bilgisi verilir. Fakat bu token verisi oturum boyunca aynı kalmaz. Örneğin kullanıcının yüklediği her bir form için ayrı token bilgisi üretilir. Arkaplanda gerçekleşen bu olayda, sisteme giriş yapan kullanıcı token aldığını her ne kadar fark etmese de, yaptığı tüm işlemlerde bu token sistem tarafından kontrol edilir ve işlemin gerçekten kullanıcı tarafından yapıldığı doğrulanır. Eğer token veya buna benzer bir anahtar kontrolü yapılmazsa, arka planda gönderilen sahte bir istek ile gerçek kullanıcının gönderdiği istek ayırt edilemez. Bu durumda sistemin gelen tüm istekleri ayırt etmeksizin kabul etmesi gerekir ki bu büyük bir güvenlik zafiyetine sebep olur.
+
+### 1.e CSRF Zafiyetine Karşı Alınabilecek Önlemler
+
+        ✔️ Kullanıcının sisteme gönderdiği önemli talepler POST metodu ile alınmalıdır.
+        ✔️Siteler Arası Talep Sahteciliğini (CSRF) önlemek için en popüler yöntem, kullanıcıya rastgele üretilmiş eşsiz bir “token” bilgisi vermektir. CSRF Token veya Synchronizer Token olarak adlandırılan bu yöntem şu şekilde çalışır:
+                - Web sunucusu bir token oluşturur. (Bu token işlem yapıldıkça yeniden üretilir.)
+                - Token, formda gizli bir bilgi olarak depolanır.
+                - Kullanıcı POST işlemini gerçekleştirir.
+                - Token bilgisi POST verilerine dahil edilir.
+                - Web uygulaması, sistem tarafından oluşturulan tokeni, talepte gönderilen token ile karşılaştırır.
+                - Eğer token verileri eşleşirse, isteğin gerçek kullanıcı tarafından gönderildiği anlaşılır ve istek onaylanır.
+                - Eşleşme yoksa, istek reddedilir. Bu sayede kötü niyetli istekler engellenmiş olur.
 <hr></hr>
 
 
