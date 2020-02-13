@@ -120,6 +120,15 @@ Kullanıcı tarafından gönderilen bir HTTP talebinin gerçek kullanıcı taraf
         - Web uygulaması, sistem tarafından oluşturulan tokeni, talepte gönderilen token ile karşılaştırır.
         - Eğer token verileri eşleşirse, isteğin gerçek kullanıcı tarafından gönderildiği anlaşılır ve istek onaylanır.
         - Eşleşme yoksa, istek reddedilir. Bu sayede kötü niyetli istekler engellenmiş olur.
+
+### 1.f CSRF açığının laravel'de kapatılması
+
+Uygulamamızda kullanacağımız formları csrf alanı olarak belirlemeliyiz.
+
+                - <form method="POST" action="/profile">
+                        @csrf
+                        ...
+                </form>
 <hr></hr>
 
 
