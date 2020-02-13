@@ -69,7 +69,7 @@ Kimsin sorusunun sorulmaması demek herhangi birisi anlamına gelir. Dolayısı 
 
 <hr></hr>
 
-### Php (Laravle) Notlar
+### Php (Laravel) Notlar
 ### 1. Cross Site Request Forgery (CSRF)
 ### 1.a CSRF Nedir ?
 
