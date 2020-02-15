@@ -225,7 +225,7 @@ Formdaki kod yazmayı gerektiren cevaplarınızı renklendirmeyi tercih ederseni
 
 NOT: Cevaplarınızda LARAVEL FRAMEWORK’ün sunduğu çözümleri kullanabilirsiniz.
 
-Soru 1: Bir web sitesinde "arkadaş ekleme" formunda csrf token kullanmaz isek ne gibi bir sonuç ile karşılaşabiliriz?
+✔️ Soru 1: Bir web sitesinde "arkadaş ekleme" formunda csrf token kullanmaz isek ne gibi bir sonuç ile karşılaşabiliriz?
 
         Bir formda post işlemini yaptığımızı düşünelim.Eğer bu form'da csrf token işlemi gerçekleştirilmesse web sunucusunun ürettiği token bilgisi ile form da üretilecek olan token bilgisi eşleşmeyeceği için bu talebin gerçek bir kullanıcı tarafından geldiği anlaşılmaz.
         Bu durumda şu senaryo düşünülebilir; Csrf token’ nın kullanılmadığını fark eden kötü niyetli birisi, benim hesabım üzerinden istek sahteciliği yaparak istediği kişileri benim hesabım üzerinden ekleme isteği gönderebilir.
