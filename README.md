@@ -240,6 +240,32 @@ NOT: Cevaplarınızda LARAVEL FRAMEWORK’ün sunduğu çözümleri kullanabilir
 
 ✔️ Soru 3: Uzantısı ne olursa olsun, sadece JPEG resimleri kabul eden bir PHP scriptinin form görseli hariç kısmının kodunu yazınız.
 
+function resimyukle ($dosya_alani = null, $resim = false) {
+
+$dosya_yolu = 'uploads/'; 
+
+$max_boyut = 1000000; //gelebilecek max dosya boyutu
+
+//Set default file extension whitelist
+$istenen_uzantılar = array('jpeg','jpg'); //gelecek resim için kısıtladığım whitelist’im.
+
+$dosya_tip = array('image/jpeg', 'image/jpg'); 
+
+$out = array('error'=>null); //Çıktıyı tutacak dizi
+
+if (!$dosya_alani) {
+  $out['error'][] = "Geçersiz dosya alanı!!!";           
+} //
+
+if (!$dosya_yolu) {
+  $out['error'][] = "Geçersiz dosya yolu!!!";               
+}
+
+if (count($out['error'])>0) {
+  return $out;
+}
+
+
 
 
 
