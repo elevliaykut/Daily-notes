@@ -244,6 +244,16 @@ NOT: Cevaplarınızda LARAVEL FRAMEWORK’ün sunduğu çözümleri kullanabilir
 
 <img src="./images/soru_three_one.png" width="70%" height="350"/>
 
+- getUser($_GET['user_id']); Fonksiyona gelen parametreye güvenilerek direct sql sorgusu üzerinde senatize edilmeden kullanılıyor olması sql injection ataklarını beraberinde getirecektir.
+
+✔️ Soru-5: Aşapıdaki koddaki güvenlik ihtimali nedir ?
+
+<img src="./images/question_five_one.png" width="70%" height="350"/>
+<img src="./images/question_five_two.png" width="70%" height="350"/>
+
+- Yukarıda eğer senfoninin table yapısı kullanılmış ise sql injection yoktur ama validation her halükarda yapılması gerekiyor.
+- Daha sonra, get id yapilmis burda IDOR vardır yani kötü niyetli bir kullanıcı id kismina başka kullanicilara ait bir id numarasi vererek onlarin profilini de yetkin olmadan çekebilir.
+- Daha sonra yine echo ile ekrana basmis ID almıştır burda da reflected XSS vardir.
 
 <hr></hr>
 
