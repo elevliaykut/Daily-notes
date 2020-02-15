@@ -238,42 +238,11 @@ NOT: Cevaplarınızda LARAVEL FRAMEWORK’ün sunduğu çözümleri kullanabilir
 - Bu süreçten sonra client server arasındaki bilgi alışverişi bu verify token ile yapılır.Böylece client’ın herbir işlemi için sunucu tarafından kullanıcı için authentication işlemi istenmez.
 - Site içindeki diğer sayfaları ziyaret ederken de  web server’a , Httprequest ile bize verilen bu token gönderilir, Web server da bu token' nın bize ait olmadığını control eder ve bize istediğimiz sayfayı HttpResponse ile döndürür.
 
-✔️ Soru 3: Uzantısı ne olursa olsun, sadece JPEG resimleri kabul eden bir PHP scriptinin form görseli hariç kısmının kodunu yazınız.
+✔️ Soru 4: Aşağıdaki koddaki güvenlik ihtimali nedir ?
 
-function resimyukle ($dosya_alani = null, $resim = false) {
+<img src="./images/soru_three.png" width="70%" height="350"/>
 
-$dosya_yolu = 'uploads/'; 
-
-$max_boyut = 1000000; //gelebilecek max dosya boyutu
-
-//Set default file extension whitelist
-$istenen_uzantılar = array('jpeg','jpg'); //gelecek resim için kısıtladığım whitelist’im.
-
-$dosya_tip = array('image/jpeg', 'image/jpg'); 
-
-$out = array('error'=>null); //Çıktıyı tutacak dizi
-
-if (!$dosya_alani) {
-  $out['error'][] = "Geçersiz dosya alanı!!!";           
-} //
-
-if (!$dosya_yolu) {
-  $out['error'][] = "Geçersiz dosya yolu!!!";               
-}
-
-if (count($out['error'])>0) {
-  return $out;
-}
-
-
-
-
-
-
-
-
-
-
+<img src="./images/soru_three_one.png" width="70%" height="350"/>
 
 
 <hr></hr>
