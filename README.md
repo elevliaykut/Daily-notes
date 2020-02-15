@@ -256,6 +256,58 @@ NOT: Cevaplarınızda LARAVEL FRAMEWORK’ün sunduğu çözümleri kullanabilir
 - Daha sonra yine echo ile ekrana basmis ID almıştır burda da reflected XSS vardir.
 
 ✔️ Soru-6: : Uzantısı ne olursa olsun, sadece JPEG resimleri kabul eden bir PHP scriptinin form görseli hariç kısmının kodunu yazınız. Eğer formu ofisimizde dolduruyorsanız neyi kontrol edeceğinizi belirtmeniz yeterli.
+        function resimyukle ($dosya_alani = null, $resim = false) {
+
+$dosya_yolu = 'uploads/'; 
+
+$max_boyut = 1000000; //gelebilecek max dosya boyutu
+
+//Set default file extension whitelist
+$istenen_uzantılar = array('jpeg','jpg'); //gelecek resim için kısıtladığım whitelist’im.
+
+$dosya_tip = array('image/jpeg', 'image/jpg'); 
+
+$out = array('error'=>null); //Çıktıyı tutacak dizi
+
+if (!$dosya_alani) {
+  $out['error'][] = "Geçersiz dosya alanı!!!";           
+} //
+
+if (!$dosya_yolu) {
+  $out['error'][] = "Geçersiz dosya yolu!!!";               
+}
+
+if (count($out['error'])>0) {
+  return $out;
+}
+
+//Dosya olduğundan emin olalım
+if((!empty($_FILES[$dosya_alani])) && ($_FILES[$dosya_alani]['error'] == 0)) {
+
+$file_info = pathinfo($_FILES[$dosya_alani]['name']);
+$isim = $file_info['filename'];                                     
+$uzantı = $file_info['extension'];
+
+// Gelen dosyanın uzantısı ile istenen_uzantılar’da olan uzantıları karşılaştır!!! 1 
+if (!in_array($uzantı, $ istenen_uzantılar)) {                                                                         
+  $out['error'][] = "Geçersiz uzantı.;
+}
+
+//Gelen dosya tipi ile dosya_tip ta olan dosya tipini karşılaştır!!! 2
+if (!in_array($_FILES[$dosya_alani]["type"], $ dosya_tip)) {
+  $out['error'][] = "Geçersiz dosya tipi";
+}
+
+//Gelen dosyanın boyutunu et !!! 3
+if ($_FILES[$dosya_alani]["size"] > $max_boyut) {
+  $out['error'][] = "Yüksek boyutlu resim";
+}
+
+if ($resim) {
+  if (!getimagesize($_FILES[$dosya_alani]['tmp_name'])) {
+    $out['error'][] = "Yüklediğiniz dosya jpeg uzantılı değil!!!";
+  }
+}
 
 
 <hr></hr>
