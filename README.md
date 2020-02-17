@@ -255,7 +255,7 @@ NOT: Cevaplarınızda LARAVEL FRAMEWORK’ün sunduğu çözümleri kullanabilir
 - Daha sonra, get id yapilmis burda IDOR vardır yani kötü niyetli bir kullanıcı id kismina başka kullanicilara ait bir id numarasi vererek onlarin profilini de yetkin olmadan çekebilir.
 - Daha sonra yine echo ile ekrana basmis ID almıştır burda da reflected XSS vardir.
 
-✔️ Soru-6: : Uzantısı ne olursa olsun, sadece JPEG resimleri kabul eden bir PHP scriptinin form görseli hariç kısmının kodunu yazınız. Eğer formu ofisimizde dolduruyorsanız neyi kontrol edeceğinizi belirtmeniz yeterli.
+✔️ Soru-6: Uzantısı ne olursa olsun, sadece JPEG resimleri kabul eden bir PHP scriptinin form görseli hariç kısmının kodunu yazınız. Eğer formu ofisimizde dolduruyorsanız neyi kontrol edeceğinizi belirtmeniz yeterli.
         function resimyukle ($dosya_alani = null, $resim = false) {
 
 $dosya_yolu = 'uploads/'; 
@@ -309,6 +309,11 @@ if ($resim) {
   }
 }
 
+<hr></hr>
+
+✔️ Soru-7: Aşağıda gösterilen yapıdaki diziyi, sayısal değerine göre nasıl sıralarsınız? Eğer formu ofisimizde dolduruyorsanız pas geçebilirsiniz.
+
+        $a ='{"mazhar":100,"fuat":15,"ozkan":-10}';
 
 <hr></hr>
 
