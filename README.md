@@ -315,5 +315,45 @@ if ($resim) {
 
         $a ='{"mazhar":100,"fuat":15,"ozkan":-10}';
 
+
+        - Küçükten Büyüğe Sıralama;
+
+        <?php
+                $a ='{"mazhar":100,"fuat":15,"ozkan":-10}';
+                $b = json_decode($a);
+                $inta = $b->{'mazhar'};
+                $intb = $b->{'fuat'};
+                $intc = $b->{'ozkan'};
+                $numbers = array($inta,$intb,$intc);
+                sort($numbers);
+                $array = count($numbers);
+                for($x = 0; $x < $array; $x++) {
+                echo $numbers[$x];
+                echo " ";
+                }
+        ?>
+
+        Output: -10 15 100 
+
+        - Büyükten Küçüğe Sıralama;
+
+        <?php
+                $a ='{"mazhar":100,"fuat":15,"ozkan":-10}';
+                $b = json_decode($a);
+                $inta = $b->{'mazhar'};
+                $intb = $b->{'fuat'};
+                $intc = $b->{'ozkan'};
+                $numbers = array($inta,$intb,$intc);
+                rsort($numbers);
+                $array = count($numbers);
+                for($x = 0; $x < $array; $x++) {
+                echo $numbers[$x];
+                echo " ";
+                }
+        ?>
+
+        Output: 100 15 -10 
+
+
 <hr></hr>
 
