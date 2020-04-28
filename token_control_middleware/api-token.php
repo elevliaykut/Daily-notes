@@ -1,6 +1,20 @@
 <?php
 
-public function handle($request, Closure $next)
+namespace App\Http\Middleware;
+
+use App\Models\UserLogin;
+use Closure;
+
+class ApiToken
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
     {
         $auth = $request->header('Authorization');
 
@@ -10,8 +24,8 @@ public function handle($request, Closure $next)
 
             if (!$token) {
                 return response()->json([
-                    'success' => false,
-                    'message' => 'Bearer Token Not Found!'
+                    'error_message' => 'Unauthorized',
+                    'message' => trans('errors.1111')
                 ], 401);
             }
 
@@ -19,18 +33,26 @@ public function handle($request, Closure $next)
 
             if (!$user) {
                 return response()->json([
-                    'success' => false,
-                    'message' => 'Invalid Bearer Token!'
+                    'error_message' => 'Unauthorized',
+                    'message' => trans('errors.1112')
                 ], 401);
             }
+
+            if (!is_token_active($user->token_expiry)) {
+                $user->token = generate_token();
+            }
+
+            $user->token_expiry = generate_token_expiry();
+            $user->save();
+
             auth()->setUser($user);
+
             return $next($request);
         }
 
         return response()->json([
-            'success' => false,
-            'message' => 'Enter Token Value',
-        ],401);
+            'error_message' => 'Unauthorized',
+            'message' => trans('errors.1113'),
+        ], 401);
     }
-
-?>
+}
