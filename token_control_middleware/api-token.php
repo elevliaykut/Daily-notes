@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\UserLogin;
+use Request;
 use Closure;
 
 class ApiToken
@@ -16,6 +17,8 @@ class ApiToken
      */
     public function handle($request, Closure $next)
     {
+        $user_id = Request::get('user_id');
+
         $auth = $request->header('Authorization');
 
         if ($auth) {
@@ -29,7 +32,9 @@ class ApiToken
                 ], 401);
             }
 
-            $user = UserLogin::where('token', $token)->first();
+            $user = UserLogin::where('token', $token)
+                ->where('user_id', $user_id)
+                ->first();
 
             if (!$user) {
                 return response()->json([
