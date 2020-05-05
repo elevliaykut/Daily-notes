@@ -12,6 +12,5 @@ Profil tablosundaki verileri, isme göre filtreleyip verileri 10 lu şekilde say
             ->paginate(10);
         return response()::json(
             'profiles' => $profil
-        )
-
+        );
     }
